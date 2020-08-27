@@ -33,7 +33,7 @@ use App\Controllers\Siswa;
                                 <?= csrf_field(); ?>
                                 <div class="form-group">
                                     <label for="nama">Nama</label>
-                                    <input type="text" class="form-control <?= ($valid->hasError('nama')) ? 'is-invalid' : ''; ?>" id="nama" placeholder="Nama" name="nama" autofocus autocomplete="off" value="<?= $dataSiswa['nama']; ?>">
+                                    <input type="text" class="form-control <?= ($valid->hasError('nama')) ? 'is-invalid' : ''; ?>" id="nama" placeholder="Nama" name="nama" autofocus autocomplete="off" value="<?= (old('nama')) ? old('nama') : $dataSiswa['nama'] ?>">
                                     <div id="validationServer03Feedback" class="invalid-feedback">
                                         <?= $valid->getError('nama'); ?>
                                     </div>
@@ -41,14 +41,14 @@ use App\Controllers\Siswa;
                                 <div class="form-row form-group">
                                     <div class="col">
                                         <label for="nisn">NISN</label>
-                                        <input type="text" class="form-control <?= ($valid->hasError('nisn')) ? 'is-invalid' : ''; ?>" placeholder="NISN" name="nisn" value="<?= $dataSiswa['nisn']; ?>">
+                                        <input type="text" class="form-control <?= ($valid->hasError('nisn')) ? 'is-invalid' : ''; ?>" placeholder="NISN" name="nisn" value="<?= (old('nisn')) ? old('nisn') : $dataSiswa['nisn'] ?>">
                                         <div id="validationServer03Feedback" class="invalid-feedback">
                                             <?= $valid->getError('nisn'); ?>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <label for="nis">NIS</label>
-                                        <input type="text" class="form-control <?= ($valid->hasError('nis')) ? 'is-invalid' : ''; ?>" placeholder="NIS" name="nis" value="<?= $dataSiswa['nis']; ?>">
+                                        <input type="text" class="form-control <?= ($valid->hasError('nis')) ? 'is-invalid' : ''; ?>" placeholder="NIS" name="nis" value="<?= (old('nis')) ? old('nis') : $dataSiswa['nis'] ?>">
                                         <div id="validationServer03Feedback" class="invalid-feedback">
                                             <?= $valid->getError('nis'); ?>
                                         </div>
@@ -57,11 +57,11 @@ use App\Controllers\Siswa;
                                 <div class="form-row form-group">
                                     <div class="col">
                                         <label for="tempatlahir">Tempat lahir</label>
-                                        <input type="text" class="form-control" placeholder="Tempat lahir" name="tem_lahir" value="<?= $dataSiswa['tem_lahir']; ?>">
+                                        <input type="text" class="form-control" placeholder="Tempat lahir" name="tem_lahir" value="<?= (old('tem_lahir')) ? old('tem_lahir') : $dataSiswa['tem_lahir'] ?>">
                                     </div>
                                     <div class="col">
                                         <label for="tanggallahir">Tanggal lahir</label>
-                                        <input type="date" class="form-control" placeholder="Tanggal lahir" name="tan_lahir" value="<?= $dataSiswa['tan_lahir']; ?>">
+                                        <input type="date" class="form-control" placeholder="Tanggal lahir" name="tan_lahir" value="<?= (old('tan_lahir')) ? old('tan_lahir') : $dataSiswa['tan_lahir'] ?>">
                                     </div>
                                 </div>
                                 <div class="form-row form-group">
@@ -91,7 +91,7 @@ use App\Controllers\Siswa;
                                 </div>
                                 <div class="form-group">
                                     <label for="alamat">Alamat</label>
-                                    <textarea class="form-control" id="alamat" rows="3" name="alamat"><?= $dataSiswa['alamat']; ?></textarea>
+                                    <textarea class="form-control" id="alamat" rows="3" name="alamat"><?= (old('alamat')) ? old('alamat') : $dataSiswa['alamat'] ?></textarea>
                                 </div>
                                 <button type="submit" class="btn btn-success" name="submit">Ubah</button>
                             </form>

@@ -114,15 +114,26 @@ class Siswa extends BaseController
 
     public function update($nisn)
     {
+        // cek nisn
+        $nisnLama = $this->siswaModel->getSiswa($this->request->getVar('nisn'));
+        if ($nisnLama['nisn'] == $this->request->getVar('nisn')) {
+            $rule_nisn = 'required';
+            $rule_nis = 'required';
+        } else {
+            $rule_nisn = 'required|is_unique[siswa.nisn]';
+            $rule_nis = 'required|is_unique[siswa.nis]';
+        }
+
         if (!$this->validate([
             'nisn' => [
-                'rules' => 'is_unique[siswa.nisn]',
+                'rules' => $rule_nisn,
                 'errors' => [
+                    'required' => '{field} siswa harus diisi!',
                     'is_unique' => '{field} siswa tidak boleh sama!'
                 ]
             ],
             'nis' => [
-                'rules' => 'required|is_unique[siswa.nis]',
+                'rules' => $rule_nis,
                 'errors' => [
                     'required' => '{field} siswa harus diisi!',
                     'is_unique' => '{field} siswa tidak boleh sama!'
@@ -143,7 +154,7 @@ class Siswa extends BaseController
                 'valid' => \Config\Services::validation()
             ];
 
-            return view('/siswa/create', $data);
+            return view('/siswa/create', $data); 
         }
 
         $data = array(
