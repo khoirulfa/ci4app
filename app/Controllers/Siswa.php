@@ -114,6 +114,38 @@ class Siswa extends BaseController
 
     public function update($nisn)
     {
+        if (!$this->validate([
+            'nisn' => [
+                'rules' => 'is_unique[siswa.nisn]',
+                'errors' => [
+                    'is_unique' => '{field} siswa tidak boleh sama!'
+                ]
+            ],
+            'nis' => [
+                'rules' => 'required|is_unique[siswa.nis]',
+                'errors' => [
+                    'required' => '{field} siswa harus diisi!',
+                    'is_unique' => '{field} siswa tidak boleh sama!'
+                ]
+            ],
+            'nama' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} siswa harus diisi!'
+                ]
+            ]
+        ])) {
+
+            $data = [
+                'title' => 'Detail siswa | CodeIgniter 4',
+                'header' => 'Detail siswa',
+                'siswa' => $this->siswaModel->getSiswa($this->request->getVar('nisn')),
+                'valid' => \Config\Services::validation()
+            ];
+
+            return view('/siswa/create', $data);
+        }
+
         $data = array(
             'nama' => $this->request->getVar('nama'),
             'nisn' => $this->request->getVar('nisn'),
@@ -127,6 +159,7 @@ class Siswa extends BaseController
         );
 
         $this->siswaModel->save($data);
+        $this->siswaModel->update($nisn, $data);
 
         session()->setFlashdata('pesan', 'Data berhasil diubah!');
 
