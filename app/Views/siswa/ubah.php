@@ -68,25 +68,25 @@ use App\Controllers\Siswa;
                                     <div class="col">
                                         <label for="kelas">Kelas</label>
                                         <select id="kelas" class="form-control" name="kelas">
-                                            <option value="X">X</option>
-                                            <option value="XI">XI</option>
-                                            <option value="XII">XII</option>
+                                            <option value="X" <?= ($dataSiswa['kelas'] == 'X') ? 'selected' : ''; ?>>X</option>
+                                            <option value="XI" <?= ($dataSiswa['kelas'] == 'XI') ? 'selected' : ''; ?>>XI</option>
+                                            <option value="XII" <?= ($dataSiswa['kelas'] == 'XII') ? 'selected' : ''; ?>>XII</option>
                                         </select>
                                     </div>
                                     <div class="col">
                                         <label for="jurusan">Jurusan</label>
                                         <select id="jurusan" class="form-control" name="jurusan">
-                                            <option value="IPA">IPA</option>
-                                            <option value="IPS">IPS</option>
-                                            <option value="BAHASA">BAHASA</option>
+                                            <option value="IPA" <?= ($dataSiswa['jurusan'] == 'IPA') ? 'selected' : ''; ?>>IPA</option>
+                                            <option value="IPS" <?= ($dataSiswa['jurusan'] == 'IPS') ? 'selected' : ''; ?>>IPS</option>
+                                            <option value="BAHASA" <?= ($dataSiswa['jurusan'] == 'BAHASA') ? 'selected' : ''; ?>>BAHASA</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="jeniskelamin">Jenis Kelamin</label>
                                     <select id="jeniskelamin" class="form-control" name="j_kelamin">
-                                        <option value="Laki - laki">Laki - laki</option>
-                                        <option value="Perempuan">Perempuan</option>
+                                        <option value="Laki - laki" <?= ($dataSiswa['j_kelamin'] == 'Laki - laki') ? 'selected' : ''; ?>>Laki - laki</option>
+                                        <option value="Perempuan" <?= ($dataSiswa['j_kelamin'] == 'premepuan') ? 'selected' : ''; ?>>Perempuan</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
