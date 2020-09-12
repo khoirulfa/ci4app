@@ -29,8 +29,9 @@ use App\Controllers\Siswa;
                 <div class="row">
                     <div class="col-6">
                         <div class="mt-1">
-                            <form action="/siswa/update/<?= $dataSiswa['nisn']; ?>" method="POST" class="md-10">
+                            <form action="/siswa/update/<?= $dataSiswa['nisn']; ?>" method="POST" class="md-10" enctype="multipart/form-data">
                                 <?= csrf_field(); ?>
+                                <input type="hidden" name="fotoLama" value="<?= $dataSiswa['pic']; ?>">
                                 <div class="form-group">
                                     <label for="nama">Nama</label>
                                     <input type="text" class="form-control <?= ($valid->hasError('nama')) ? 'is-invalid' : ''; ?>" id="nama" placeholder="Nama" name="nama" autofocus autocomplete="off" value="<?= (old('nama')) ? old('nama') : $dataSiswa['nama'] ?>">
@@ -92,6 +93,13 @@ use App\Controllers\Siswa;
                                 <div class="form-group">
                                     <label for="alamat">Alamat</label>
                                     <textarea class="form-control" id="alamat" rows="3" name="alamat"><?= (old('alamat')) ? old('alamat') : $dataSiswa['alamat'] ?></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="pic">Tambah foto siswa</label>
+                                    <input type="file" class="form-control-file" id="pic" name="pic">
+                                </div>
+                                <div class="form-group col d-inline-block ">
+                                    <img src="/img/<?= $dataSiswa['pic']; ?>" class="img-thumbnail img-preview">
                                 </div>
                                 <button type="submit" class="btn btn-success" name="submit">Ubah</button>
                             </form>

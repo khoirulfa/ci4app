@@ -10,7 +10,7 @@ class SiswaModel extends Model
     protected $useTimeStamps = true;
     protected $primaryKey = 'nisn';
     protected $allowedFields = [
-        'nama', 'nisn', 'nis', 'tem_lahir', 'tan_lahir', 'kelas', 'jurusan', 'j_kelamin', 'alamat'
+        'nama', 'nisn', 'nis', 'tem_lahir', 'tan_lahir', 'kelas', 'jurusan', 'j_kelamin', 'alamat', 'pic'
     ];
 
     public function getSiswa($nisn = false)

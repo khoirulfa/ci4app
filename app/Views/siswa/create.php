@@ -25,7 +25,7 @@
                 <div class="row">
                     <div class="col-6">
                         <div class="mt-1">
-                            <form action="/siswa/savedata" method="POST" class="md-10">
+                            <form action="/siswa/savedata" method="POST" class="md-10" enctype="multipart/form-data">
                                 <?= csrf_field(); ?>
                                 <div class="form-group">
                                     <label for="nama">Nama</label>
@@ -88,6 +88,16 @@
                                 <div class="form-group">
                                     <label for="alamat">Alamat</label>
                                     <textarea class="form-control" id="alamat" rows="3" name="alamat"><?= old('alamat'); ?></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="pic">Tambah foto siswa</label>
+                                    <input type="file" class="form-control-file <?= ($valid->hasError('pic')) ? 'is-invalid' : ''; ?>" id="pic" name="pic" onchange="previewFoto()">
+                                    <div id="validationServer03Feedback" class="invalid-feedback">
+                                        <?= $valid->getError('pic'); ?>
+                                    </div>
+                                </div>
+                                <div class="form-group col d-inline-block ">
+                                    <img src="/img/default.png" class="img-thumbnail img-preview">
                                 </div>
                                 <button type="submit" class="btn btn-success" name="submit">Submit</button>
                             </form>
