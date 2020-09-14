@@ -3,7 +3,7 @@
     <!-- Brand Logo -->
     <a href="../../index3.html" class="brand-link">
         <img src="/assets/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light">AdminLTE 3</span>
+        <span class="brand-text font-weight-light"><strong>MAISapp</strong></span>
     </a>
 
     <!-- Sidebar -->
@@ -14,7 +14,7 @@
                 <img src="/assets/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">Alexander Pierce</a>
+                <a href="#" class="d-block">A. Musafir Khoirul Fattah</a>
             </div>
         </div>
 
@@ -30,35 +30,6 @@
                             Dashboard
                         </p>
                     </a>
-                </li>
-                <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-chart-pie"></i>
-                        <p>
-                            Grafik
-                            <i class="right fas fa-angle-left"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="../charts/chartjs.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>ChartJS</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="../charts/flot.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Flot</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="../charts/inline.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Inline</p>
-                            </a>
-                        </li>
-                    </ul>
                 </li>
                 <!-- tables -->
                 <li class="nav-item has-treeview">
@@ -77,7 +48,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../tables/data.html" class="nav-link">
+                            <a href="/guru" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Data Guru</p>
                             </a>

@@ -43,8 +43,11 @@
             <?php endif; ?>
         </div>
         <div class="container mt-1">
-            <a href="/siswa/create" class="btn btn-primary mt-1">Tambah data siswa</a>
-            <div class="col">
+            <a href="/siswa/create" class="btn btn-primary btn-sm mt-1">
+                <i class="fa fa-plus mr-2"></i>
+                <p class="d-inline">Tambah data</p>
+            </a>
+            <div class="col"> 
                 <div class="row card-body mt-3 p-0">
                     <table class="table">
                         <thead style="text-align: center;">

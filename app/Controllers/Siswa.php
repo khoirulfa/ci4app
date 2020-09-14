@@ -116,7 +116,7 @@ class Siswa extends BaseController
 
     public function delete($nisn)
     {
-        // cari gambar bersasar nisn
+        // cari gambar berdasar nisn
         $siswa = $this->siswaModel->find($nisn);
 
         // cegah hapus default.png
