@@ -33,13 +33,16 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
+
+// siswa
 $routes->get('/', 'Pages::index');
-$routes->get('/about', 'Pages::about');
 $routes->get('/siswa', 'Siswa::index');
-$routes->get('/siswa/create', 'Siswa::create');
 $routes->get('/siswa/ubah/(:num)', 'Siswa::ubah/$1');
 $routes->delete('/siswa/(:num)', 'Siswa::delete/$1');
 $routes->get('/siswa/(:any)', 'Siswa::detail/$1');
+
+// guru
+$routes->delete('/guru/(:num)', 'Guru::delete/$1');
 
 
 /**

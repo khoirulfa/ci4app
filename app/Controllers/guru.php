@@ -45,6 +45,19 @@ class Guru extends BaseController
 		return view('guru/create', $data);
 	}
 
+	public function delete($id)
+	{
+		$guru = $this->GuruModel->find($id);
+
+		if ($guru['pic'] != 'default.png') {
+			unlink('img/' . $guru['pic']);
+		}
+
+		$this->GuruModel->delete($id);
+		session()->setFlashdata('pesan', 'Data berhasil dihapus!');
+		return redirect()->to('/guru');
+	}
+
 	public function savedata()
 	{
 		if (!$this->validate([
