@@ -28,7 +28,7 @@ class Guru extends BaseController
 	{
 		$data = [
 			'title' => 'Detail guru',
-			'teacher' => $this->GuruModel->getGuru($id)
+			'guru' => $this->GuruModel->getGuru($id)
 		];
 
 		return view('guru/detail', $data);
@@ -93,6 +93,7 @@ class Guru extends BaseController
 		$data = array(
 			'nama' => $this->request->getVar('nama'),
 			'tem_lahir' => $this->request->getVar('tem_lahir'),
+			'tan_lahir' => $this->request->getVar('tan_lahir'),
 			'tmt' => $this->request->getVar('tmt'),
 			'jabatan' => $this->request->getVar('jabatan'),
 			'mapel' => $this->request->getVar('mapel'),
@@ -107,5 +108,79 @@ class Guru extends BaseController
 		session()->setFlashdata('pesan', 'Data berhasil ditambahkan!');
 
 		return redirect()->to('/guru');
+	}
+
+	public function ubah($id)
+	{
+		$data = [
+			'title' => 'Form ubah data guru',
+			'header' => 'Ubah data guru',
+			'valid' => \Config\Services::validation(),
+			'dataGuru' => $this->GuruModel->getGuru($id)
+		];
+
+		return view('guru/ubah', $data);
+	}
+
+	public function update($id)
+	{
+		if (!$this->validate([
+			'nama' => [
+				'rules' => 'required',
+				'errors' => [
+					'required' => '{field} siswa harus diisi!'
+				]
+			],
+			'pic' => [
+				'rules' => 'max_size[pic,2048]|is_image[pic]|mime_in[pic,image/jpg,image/jpeg,image/png]',
+				'errors' => [
+					'max_size' => 'gambar yang anda pilih terlalu besar',
+					'is_image' => 'yang anda pilih bukan gambar',
+					'mime_in' => 'yang anda pilih bukan gambar'
+				]
+			]
+		])) {
+
+			$data = [
+				'title' => 'Detail guru | CodeIgniter 4',
+				'header' => 'Detail guru',
+				'siswa' => $this->GuruModel->getGuru($this->request->getVar('id')),
+			];
+
+			return view('/siswa/create', $data);
+		}
+
+		$fileFoto = $this->request->getFile('pic');
+
+		// cek gambar apakah ga diganti
+		if ($fileFoto->getError() == 4) {
+			$namaFoto = $this->request->getVar('fotoLama');
+		} else {
+			$namaFoto = $fileFoto->getRandomName();
+			// pindahkan
+			$fileFoto->move('img', $namaFoto);
+			// hapus file lama
+			unlink('img/' . $this->request->getVar('fotoLama'));
+		}
+
+		$data = array(
+			'nama' => $this->request->getVar('nama'),
+			'tem_lahir' => $this->request->getVar('tem_lahir'),
+			'tan_lahir' => $this->request->getVar('tan_lahir'),
+			'tmt' => $this->request->getVar('tmt'),
+			'jabatan' => $this->request->getVar('jabatan'),
+			'mapel' => $this->request->getVar('mapel'),
+			'j_kelamin' => $this->request->getVar('j_kelamin'),
+			'domisili' => $this->request->getVar('domisili'),
+			'alamat' => $this->request->getVar('alamat'),
+			'pic' => $namaFoto
+		);
+
+		$this->GuruModel->save($data);
+		$this->GuruModel->update($id, $data);
+
+		session()->setFlashdata('pesan', 'Data berhasil diubah!');
+
+		return redirect()->to("/guru");
 	}
 }

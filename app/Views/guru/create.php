@@ -34,9 +34,15 @@
                     <?= $valid->getError('nama'); ?>
                   </div>
                 </div>
-                <div class="form-group">
-                  <label for="tempatlahir">Tempat lahir</label>
-                  <input type="text" class="form-control" placeholder="Tempat lahir" name="tem_lahir" autocomplete="off" value="<?= old('tem_lahir'); ?>">
+                <div class="form-row form-group">
+                  <div class="col">
+                    <label for="tempatlahir">Tempat lahir</label>
+                    <input type="text" class="form-control" placeholder="Tempat lahir" name="tem_lahir" autocomplete="off" value="<?= old('tem_lahir'); ?>">
+                  </div>
+                  <div class="col">
+                    <label for="tanggallahir">Tanggal lahir</label>
+                    <input type="date" class="form-control" placeholder="Tanggal lahir" name="tan_lahir" autocomplete="off" value="<?= old('tan_lahir'); ?>">
+                  </div>
                 </div>
                 <div class="form-group">
                   <label for="tmt">Tanggal mulai tugas</label>

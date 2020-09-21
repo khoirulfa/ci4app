@@ -9,8 +9,7 @@ class GuruModel extends Model
     protected $table = "guru";
     protected $useTimeStamps = true;
     protected $allowedFields = [
-        'nama', 'tem_lahir', 'j_kelamin', 'domisili',
-        'alamat',  'tmt', 'jabatan', 'mapel', 'pendidikan', 'perguruan_tinggi'
+        'nama', 'tem_lahir', 'tan_lahir', 'j_kelamin', 'domisili', 'alamat',  'tmt', 'jabatan', 'mapel', 'pendidikan', 'lembaga', 'pic'
     ];
 
     public function getGuru($id = false)

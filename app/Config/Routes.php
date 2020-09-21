@@ -43,6 +43,7 @@ $routes->get('/siswa/(:any)', 'Siswa::detail/$1');
 
 // guru
 $routes->delete('/guru/(:num)', 'Guru::delete/$1');
+$routes->get('/guru/ubah/(:num)', 'Guru::ubah/$1');
 
 
 /**

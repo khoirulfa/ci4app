@@ -23,8 +23,7 @@
 				<div class="tab-content ml-4" id="myTabContent">
 					<div class="tab-pane fade show active" id="basicInfo" role="tabpanel" aria-labelledby="basicInfo-tab">
 						<div class="float-right">
-							<a href="/guru/ubah/<?php //echo $guru['nisn'];
-														?>" class="btn btn-warning btn-sm mr-1">Ubah</a>
+							<a href="/guru/ubah/<?= $guru['id']; ?>" class="btn btn-warning btn-sm mr-1">Ubah</a>
 							<a href="/guru" class="btn btn-primary btn-sm">Kembali ke daftar guru</a>
 						</div>
 						<h2><?= $title; ?></h2>
@@ -33,7 +32,7 @@
 								<label style="font-weight:bold;">Nama Lengkap</label>
 							</div>
 							<div class="col-md-8 col-6">
-								<?= $teacher['nama']; ?>
+								<?= $guru['nama']; ?>
 							</div>
 						</div>
 						<hr />
@@ -44,15 +43,15 @@
 							</div>
 							<div class="col-md-8 col-6">
 								<?php
-								if ($teacher['jabatan'] == 'kepsek')
+								if ($guru['jabatan'] == 'kepsek')
 									echo "Kepala Sekolah";
-								elseif ($teacher['jabatan'] == 'waka_pend')
+								elseif ($guru['jabatan'] == 'waka_pend')
 									echo "Waka Pendidikan";
-								elseif ($teacher['jabatan'] == 'waka_sis')
+								elseif ($guru['jabatan'] == 'waka_sis')
 									echo "Waka Kesiswaan";
-								elseif ($teacher['jabatan'] == 'waka_hum')
+								elseif ($guru['jabatan'] == 'waka_hum')
 									echo "Waka Humas";
-								elseif ($teacher['jabatan'] == 'guru')
+								elseif ($guru['jabatan'] == 'guru')
 									echo "Guru";
 								else
 									echo "TU";
@@ -66,7 +65,7 @@
 								<label style="font-weight:bold;">Mata pelajaran</label>
 							</div>
 							<div class="col-md-8 col-6">
-								<?= $teacher['mapel']; ?>
+								<?= $guru['mapel']; ?>
 							</div>
 						</div>
 						<hr />
@@ -76,7 +75,7 @@
 								<label style="font-weight:bold;">Tempat, tanggal lahir</label>
 							</div>
 							<div class="col-md-8 col-6">
-								<?= "{$teacher['tem_lahir']}, {$teacher['tan_lahir']}"; ?>
+								<?= "{$guru['tem_lahir']}, {$guru['tan_lahir']}"; ?>
 							</div>
 						</div>
 						<hr />
@@ -86,7 +85,7 @@
 								<label style="font-weight:bold;">Jenis Kelamin</label>
 							</div>
 							<div class="col-md-8 col-6">
-								<?= $teacher['j_kelamin'] == "laki - laki" ? 'Laki - laki' : 'Perempuan' ?>
+								<?= $guru['j_kelamin'] == "laki - laki" ? 'Laki - laki' : 'Perempuan' ?>
 							</div>
 						</div>
 						<hr />
@@ -96,7 +95,7 @@
 								<label style="font-weight:bold;">Alamat</label>
 							</div>
 							<div class="col-md-8 col-6">
-								<?= $teacher['alamat']; ?>
+								<?= $guru['alamat']; ?>
 							</div>
 						</div>
 						<hr />
@@ -107,9 +106,9 @@
 							</div>
 							<div class="col-md-8 col-6">
 								<?php
-								if ($teacher['pendidikan'] == 'perguruan_tinggi')
+								if ($guru['pendidikan'] == 'perguruan_tinggi')
 									echo 'Perguruan Tinggi';
-								elseif ($teacher['pendidikan'] == 'sma_sederajat')
+								elseif ($guru['pendidikan'] == 'sma_sederajat')
 									echo 'SMA Sederajat';
 								else
 									echo 'Pondok Pesantren';
@@ -124,7 +123,7 @@
 								<label style="font-weight:bold;">Lembaga</label>
 							</div>
 							<div class="col-md-8 col-6">
-								<?= $teacher['lembaga']; ?>
+								<?= $guru['lembaga']; ?>
 							</div>
 						</div>
 						<hr />
