@@ -37,16 +37,16 @@
                 <div class="form-row form-group">
                   <div class="col">
                     <label for="tempatlahir">Tempat lahir</label>
-                    <input type="text" class="form-control" placeholder="Tempat lahir" name="tem_lahir" autocomplete="off" value="<?= old('tem_lahir'); ?>">
+                    <input type="text" class="form-control" placeholder="Tempat lahir" id="tempatlahir" name="tem_lahir" autocomplete="off" value="<?= old('tem_lahir'); ?>">
                   </div>
                   <div class="col">
                     <label for="tanggallahir">Tanggal lahir</label>
-                    <input type="date" class="form-control" placeholder="Tanggal lahir" name="tan_lahir" autocomplete="off" value="<?= old('tan_lahir'); ?>">
+                    <input type="date" class="form-control" placeholder="Tanggal lahir" id="tanggallahir" name="tan_lahir" autocomplete="off" value="<?= old('tan_lahir'); ?>">
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="tmt">Tanggal mulai tugas</label>
-                  <input type="date" class="form-control" name="tmt" value="<?= old('tmt'); ?>">
+                  <input type="date" class="form-control" id="tmt" name="tmt" value="<?= old('tmt'); ?>">
                 </div>
                 <div class="form-row form-group">
                   <div class="col">

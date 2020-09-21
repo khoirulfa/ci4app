@@ -94,12 +94,14 @@ class Guru extends BaseController
 			'nama' => $this->request->getVar('nama'),
 			'tem_lahir' => $this->request->getVar('tem_lahir'),
 			'tan_lahir' => $this->request->getVar('tan_lahir'),
-			'tmt' => $this->request->getVar('tmt'),
-			'jabatan' => $this->request->getVar('jabatan'),
-			'mapel' => $this->request->getVar('mapel'),
 			'j_kelamin' => $this->request->getVar('j_kelamin'),
 			'domisili' => $this->request->getVar('domisili'),
 			'alamat' => $this->request->getVar('alamat'),
+			'tmt' => $this->request->getVar('tmt'),
+			'jabatan' => $this->request->getVar('jabatan'),
+			'mapel' => $this->request->getVar('mapel'),
+			'pendidikan' => $this->request->getVar('pendidikan'),
+			'lembaga' => $this->request->getVar('lembaga'),
 			'pic' => $namaFileGuru
 		);
 
@@ -167,12 +169,14 @@ class Guru extends BaseController
 			'nama' => $this->request->getVar('nama'),
 			'tem_lahir' => $this->request->getVar('tem_lahir'),
 			'tan_lahir' => $this->request->getVar('tan_lahir'),
-			'tmt' => $this->request->getVar('tmt'),
-			'jabatan' => $this->request->getVar('jabatan'),
-			'mapel' => $this->request->getVar('mapel'),
 			'j_kelamin' => $this->request->getVar('j_kelamin'),
 			'domisili' => $this->request->getVar('domisili'),
 			'alamat' => $this->request->getVar('alamat'),
+			'tmt' => $this->request->getVar('tmt'),
+			'jabatan' => $this->request->getVar('jabatan'),
+			'mapel' => $this->request->getVar('mapel'),
+			'pendidikan' => $this->request->getVar('pendidikan'),
+			'lembaga' => $this->request->getVar('lembaga'),
 			'pic' => $namaFoto
 		);
 
