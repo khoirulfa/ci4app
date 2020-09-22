@@ -7,7 +7,7 @@
 		<div class="card-title mb-4">
 			<div class="d-flex justify-content-start">
 				<div class="image-container">
-					<img src="/img/default.png" id="imgProfile" style="width: 150px; height: 150px" class="img-thumbnail" />
+					<img src="/img/<?= $guru['pic']; ?>" id="imgProfile" style="width: 150px; height: 150px" class="img-thumbnail" />
 					<div class="middle mt-4">
 						<input type="file" style="display: none;" id="profilePicture" name="file" />
 					</div>

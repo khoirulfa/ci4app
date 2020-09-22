@@ -43,7 +43,7 @@
       <?php endif; ?>
     </div>
     <div class="col-xs-10 offset-xs-1 mt-1">
-      <a href="/guru/create" class="btn btn-primary btn-sm mt-1 ml-2 ">
+      <a href="/guru/create" class="btn btn-primary btn-sm mt-1 ml-2">
         <i class="fa fa-plus mr-2"></i>
         <p class="d-inline">Tambah data</p>
       </a>

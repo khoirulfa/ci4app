@@ -37,6 +37,7 @@ $routes->setAutoRoute(true);
 // siswa
 $routes->get('/', 'Pages::index');
 $routes->get('/siswa', 'Siswa::index');
+$routes->get('/siswa/create', 'Siswa::create');
 $routes->get('/siswa/ubah/(:num)', 'Siswa::ubah/$1');
 $routes->delete('/siswa/(:num)', 'Siswa::delete/$1');
 $routes->get('/siswa/(:any)', 'Siswa::detail/$1');

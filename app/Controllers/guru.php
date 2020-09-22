@@ -42,7 +42,7 @@ class Guru extends BaseController
 			'valid' => \Config\Services::validation()
 		];
 
-		return view('guru/create', $data);
+		return view('guru/create', $data); 
 	}
 
 	public function delete($id)

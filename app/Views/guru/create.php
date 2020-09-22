@@ -41,12 +41,26 @@
                   </div>
                   <div class="col">
                     <label for="tanggallahir">Tanggal lahir</label>
-                    <input type="date" class="form-control" placeholder="Tanggal lahir" id="tanggallahir" name="tan_lahir" autocomplete="off" value="<?= old('tan_lahir'); ?>">
+                    <div class="input-group flex-nowrap">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="addon-wrapping">
+                          <i class="fas fa-calendar"></i>
+                        </span>
+                      </div>
+                      <input type="text" class="form-control datepicker" placeholder="Tanggal lahir" id="tanggallahir" name="tan_lahir" autocomplete="off" value="<?= old('tan_lahir'); ?>">
+                    </div>
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="tmt">Tanggal mulai tugas</label>
-                  <input type="date" class="form-control" id="tmt" name="tmt" value="<?= old('tmt'); ?>">
+                  <div class="input-group flex-nowrap">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="addon-wrapping">
+                        <i class="fas fa-calendar"></i>
+                      </span>
+                    </div>
+                    <input type="text" class="form-control datepicker" placeholder="Tanggal mulai tugas" id="tmt" name="tmt" autocomplete="off" value="<?= old('tmt'); ?>">
+                  </div>
                 </div>
                 <div class="form-row form-group">
                   <div class="col">

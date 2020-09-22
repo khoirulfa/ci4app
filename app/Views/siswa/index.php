@@ -42,12 +42,12 @@
                 </div>
             <?php endif; ?>
         </div>
-        <div class="container mt-1">
-            <a href="/siswa/create" class="btn btn-primary btn-sm mt-1">
+        <div class="col-xs-10 offset-xs-1 mt-1">
+            <a href="/siswa/create" class="btn btn-primary btn-sm mt-1 ml-2">
                 <i class="fa fa-plus mr-2"></i>
                 <p class="d-inline">Tambah data</p>
             </a>
-            <div class="col"> 
+            <div class="col">
                 <div class="row card-body mt-3 p-0">
                     <table class="table">
                         <thead style="text-align: center;">
