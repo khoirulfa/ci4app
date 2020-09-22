@@ -59,8 +59,8 @@ let lineChart = new Chart(line, {
 });
 
 // student  at 10 years  by gender
-let ctx = document.getElementById('10-years-student-gender').getContext('2d');
-let myChart = new Chart(ctx, {
+let gender = document.getElementById('10-years-student-gender').getContext('2d');
+let genderChart = new Chart(gender, {
 	type: 'bar',
 	data: {
 		labels: label,
@@ -69,16 +69,16 @@ let myChart = new Chart(ctx, {
 				fill: false,
 				label: 'Laki - Laki',
 				data: manData,
-				backgroundColor: 'rgba(60,141,188,0.9)',
-				borderColor: 'rgba(60,141,188,0.9)',
+				backgroundColor: 'rgba(60,141,188,0.3)',
+				borderColor: 'rgba(60,141,188,0.3)',
 				borderWidth: 2
 			},
 			{
 				fill: false,
 				label: 'Perempuan',
 				data: womanData,
-				backgroundColor: 'rgba(210, 214, 222, 1)',
-				borderColor: 'rgba(210, 214, 222, 1)',
+				backgroundColor: 'rgba(210, 214, 222, 0.3)',
+				borderColor: 'rgba(210, 214, 222, 0.3)',
 				borderWidth: 2
 			}
 		]
@@ -100,7 +100,7 @@ let myChart = new Chart(ctx, {
 });
 
 // major
-var donutData = {
+var majorData = {
 	labels: [ 'IPA', 'IPS', 'BAHASA' ],
 	datasets: [
 		{
@@ -111,16 +111,38 @@ var donutData = {
 };
 
 let major = document.getElementById('major').getContext('2d');
-var pieData = donutData;
 var pieOptions = {
 	maintainAspectRatio: false,
 	responsive: true
 };
 
-var pieChart = new Chart(major, {
+var majorChart = new Chart(major, {
 	type: 'pie',
-	data: pieData,
+	data: majorData,
 	options: pieOptions
+});
+
+// ekskul
+let ekskulData = {
+	labels: [ 'OSIS', 'Pijar Emas', 'PRODISTIK', 'Pramuka', 'IPNU', 'IPPNU' ],
+	datasets: [
+		{
+			data: [ 700, 500, 800, 432, 132, 231 ],
+			backgroundColor: [ '#f56954', '#00a65a', '#f39c12', '#f65854', '#444', '#555' ]
+		}
+	]
+};
+let ekskul = document.getElementById('ekskul').getContext('2d');
+let ekskulChart = new Chart(ekskul, {
+	type: 'doughnut',
+	data: ekskulData,
+	options: {
+		legend: {
+			position: 'right'
+		},
+		maintainAspectRatio: false,
+		responsive: true
+	}
 });
 
 // photo preview

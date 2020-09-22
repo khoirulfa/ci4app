@@ -74,10 +74,9 @@
          <!-- ./col -->
       </div>
 
-
-      <!-- chart head -->
+      <!-- all -->
       <div class="row">
-         <div class="col-md-6">
+         <div class="col-md-7">
             <div class="card card-info">
                <div class="card-header">
                   <span>Data jumlah siswa selama 10 tahun</span>
@@ -89,13 +88,14 @@
                </div>
                <div class="card-body">
                   <div class="chart">
-                     <canvas id="10-years-student" style="max-width: 100%; display: block; width: 401px;" width="401" height="250" class="chartjs-render-monitor"></canvas>
+                     <canvas id="10-years-student" style="max-width: 100%; display: block; width: 401px;" width="400" height="250" class="chartjs-render-monitor"></canvas>
                   </div>
                </div>
                <!-- /.card-body -->
             </div>
          </div>
-         <div class="col-md-6">
+         <!-- gender -->
+         <div class="col-md-5">
             <div class="card card-primary">
                <div class="card-header">
                   <span>Data siswa 10 tahun terakhir berdasarkan jenis kelamin</span>
@@ -107,7 +107,7 @@
                </div>
                <div class="card-body">
                   <div class="chart">
-                     <canvas id="10-years-student-gender" style="max-width: 100%; display: block; width: 401px;" width="401" height="250" class="chartjs-render-monitor"></canvas>
+                     <canvas id="10-years-student-gender" style="max-width: 100%; display: block; width: 401px;" height="370" class="chartjs-render-monitor"></canvas>
                   </div>
                </div>
                <!-- /.card-body -->
@@ -115,8 +115,8 @@
          </div>
       </div>
 
-      <!-- major -->
       <div class="row">
+         <!-- major -->
          <div class="col-md-5">
             <div class="card card-success">
                <div class="card-header">
@@ -135,10 +135,12 @@
                <!-- /.card-body -->
             </div>
          </div>
+
+         <!-- ekskul -->
          <div class="col-md-7">
-            <div class="card card-danger">
+            <div class="card card-info">
                <div class="card-header">
-                  <span>Lorem ipsum</span>
+                  <span>Ekstrakurikuler</span>
                   <div class="card-tools">
                      <button type="button" class="btn btn-tool" data-card-widget="collapse">
                         <i class="fas fa-minus"></i>
@@ -147,9 +149,10 @@
                </div>
                <div class="card-body">
                   <div class="chart">
-                     <canvas id="prodistik" style="max-width: 100%; display: block; width: 401px;" width="401" height="250" class="chartjs-render-monitor"></canvas>
+                     <canvas id="ekskul" style="max-width: 100%; display: block; width: 401px;" width="401" height="250" class="chartjs-render-monitor"></canvas>
                   </div>
                </div>
+               <!-- /.card-body -->
             </div>
          </div>
       </div>
