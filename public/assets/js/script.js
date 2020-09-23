@@ -58,7 +58,7 @@ let lineChart = new Chart(line, {
 	}
 });
 
-// student  at 10 years  by gender
+// by gender
 let gender = document.getElementById('10-years-student-gender').getContext('2d');
 let genderChart = new Chart(gender, {
 	type: 'bar',
@@ -127,14 +127,14 @@ let ekskulData = {
 	labels: [ 'OSIS', 'Pijar Emas', 'PRODISTIK', 'Pramuka', 'IPNU', 'IPPNU' ],
 	datasets: [
 		{
-			data: [ 700, 500, 800, 432, 132, 231 ],
+			data: [ 700, 500, 1140, 432, 132, 231 ],
 			backgroundColor: [ '#f56954', '#00a65a', '#f39c12', '#f65854', '#444', '#555' ]
 		}
 	]
 };
 let ekskul = document.getElementById('ekskul').getContext('2d');
 let ekskulChart = new Chart(ekskul, {
-	type: 'doughnut',
+	type: 'polarArea',
 	data: ekskulData,
 	options: {
 		legend: {
