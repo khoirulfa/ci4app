@@ -76,7 +76,7 @@
 
       <!-- all -->
       <div class="row">
-         <div class="col-md-7">
+         <div class="col-md-6">
             <div class="card card-info">
                <div class="card-header">
                   <span>Data jumlah siswa selama 10 tahun</span>
@@ -95,7 +95,7 @@
             </div>
          </div>
          <!-- gender -->
-         <div class="col-md-5">
+         <div class="col-md-6">
             <div class="card card-primary">
                <div class="card-header">
                   <span>Data siswa 10 tahun terakhir berdasarkan jenis kelamin</span>
@@ -107,7 +107,7 @@
                </div>
                <div class="card-body">
                   <div class="chart">
-                     <canvas id="10-years-student-gender" style="max-width: 100%; display: block; width: 401px;" height="370" class="chartjs-render-monitor"></canvas>
+                     <canvas id="10-years-student-gender" style="max-width: 100%; display: block; width: 401px;" height="250" class="chartjs-render-monitor"></canvas>
                   </div>
                </div>
                <!-- /.card-body -->

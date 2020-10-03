@@ -18,6 +18,7 @@ class Siswa extends BaseController
          'title' => "Data siswa | CodeIgniter4",
          'header' => "Tabel data siswa",
          'breadcrumb' => "Tabel data / Data siswa",
+         'valid' => \Config\Services::validation(),
          'siswa' => $this->siswaModel->getSiswa()
       ];
 
@@ -32,17 +33,6 @@ class Siswa extends BaseController
       ];
 
       return view('siswa/detail', $data);
-   }
-
-   public function create()
-   {
-      $data = [
-         'title' => 'Form tambah data siswa',
-         'header' => 'Tambah data siswa',
-         'valid' => \Config\Services::validation()
-      ];
-
-      return view('siswa/create', $data);
    }
 
    public function savedata()

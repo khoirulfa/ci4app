@@ -24,20 +24,13 @@ class Auth extends BaseController
 
    public function login()
    {
-      $username = $this->request->getPost('username');
-      $password = $this->request->getPost('password');
+      return redirect()->to('/home');
+   }
 
-      $cek = $this->AuthModel->cek_login($username, $password);
-
-      if (($cek['username'] == $username) && ($cek['password'] == $password)) {
-         session()->set('username', $cek['username']);
-         session()->set('name', $cek['name']);
-
-         return redirect()->to('/home');
-      } else {
-         session()->setFlashData('gagal', 'Username atau password anda salah');
-
-         return redirect()->to('/');
-      }
+   public function logout()
+   {
+      // hancurkan semua sesi
+      $this->session->sess_destroy();
+      return redirect()->to('/');
    }
 }

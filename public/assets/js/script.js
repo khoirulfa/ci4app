@@ -2,10 +2,6 @@ $(function() {
 	$('.close').click(function() {
 		$('.toasts-top-right').remove();
 	});
-
-	$('.datepicker').datepicker({
-		format: 'dd-mm-yyyy'
-	});
 });
 
 let label = [ '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020' ];
@@ -26,7 +22,7 @@ let allStudent = [
 	manData[18] + womanData[11]
 ];
 
-// 10 years student
+// 10 years student|
 let line = document.getElementById('10-years-student').getContext('2d');
 let lineChart = new Chart(line, {
 	type: 'line',

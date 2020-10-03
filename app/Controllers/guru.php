@@ -18,6 +18,7 @@ class Guru extends BaseController
 			'title' => "Data guru | CodeIgniter4",
 			'header' => "Tabel data guru",
 			'breadcrumb' => "Tabel data / Data guru",
+			'valid' => \Config\Services::validation(),
 			'teachers' => $this->GuruModel->getGuru()
 		];
 
@@ -32,17 +33,6 @@ class Guru extends BaseController
 		];
 
 		return view('guru/detail', $data);
-	}
-
-	public function create()
-	{
-		$data = [
-			'title' => 'Form tambah data guru',
-			'header' => 'Tambah data guru',
-			'valid' => \Config\Services::validation()
-		];
-
-		return view('guru/create', $data); 
 	}
 
 	public function delete($id)
@@ -180,7 +170,6 @@ class Guru extends BaseController
 			'pic' => $namaFoto
 		);
 
-		$this->GuruModel->save($data);
 		$this->GuruModel->update($id, $data);
 
 		session()->setFlashdata('pesan', 'Data berhasil diubah!');
