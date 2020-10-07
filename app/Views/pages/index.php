@@ -76,7 +76,7 @@
 
       <!-- all -->
       <div class="row">
-         <div class="col-md-7">
+         <div class="col-md-6">
             <div class="card card-info">
                <div class="card-header">
                   <span>Data jumlah siswa selama 10 tahun</span>
@@ -95,7 +95,7 @@
             </div>
          </div>
          <!-- gender -->
-         <div class="col-md-5">
+         <div class="col-md-6">
             <div class="card card-primary">
                <div class="card-header">
                   <span>Data siswa 10 tahun terakhir berdasarkan jenis kelamin</span>
