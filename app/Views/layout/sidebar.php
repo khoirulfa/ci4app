@@ -53,12 +53,6 @@
                         <p>Data Guru</p>
                      </a>
                   </li>
-                  <li class="nav-item">
-                     <a href="../tables/data.html" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>Admin</p>
-                     </a>
-                  </li>
                </ul>
             </li>
             <!-- ./tables -->
