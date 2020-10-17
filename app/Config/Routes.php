@@ -34,11 +34,10 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 
-// auth
-$routes->get('/', 'Auth::index');
+
 
 // pages
-$routes->get('/home', 'Pages::index');
+$routes->get('/', 'Pages::index');
 
 // siswa
 $routes->get('/siswa', 'Siswa::index');

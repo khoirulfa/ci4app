@@ -43,10 +43,11 @@
             <?php endif; ?>
         </div>
         <div class="col-xs-10 offset-xs-1 mt-1">
-            <a href="/siswa/create" class="btn btn-primary btn-sm mt-1 ml-2">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary btn-sm mt-1 ml-2" data-toggle="modal" data-target="#create-data">
                 <i class="fa fa-plus mr-2"></i>
                 <p class="d-inline">Tambah data</p>
-            </a>
+            </button>
             <div class="col">
                 <div class="row card-body mt-3 p-0">
                     <table class="table">
@@ -72,8 +73,8 @@
                                         <?= $sis['j_kelamin'] == "Laki - laki" ? 'L' : 'P' ?>
                                     </td>
                                     <td scope="col" style="text-align: center;">
-                                        <a href="/siswa/<?= $sis['nisn']; ?>" class="btn btn-success btn-sm">Detail</a>
-                                        <form action="/siswa/<?= $sis['nisn']; ?>" method="POST" class="d-inline">
+                                        <a href="/siswa/<?= $sis['id']; ?>" class="btn btn-success btn-sm">Detail</a>
+                                        <form action="/siswa/<?= $sis['id']; ?>" method="POST" class="d-inline">
                                             <?= csrf_field(); ?>
                                             <input type="hidden" name="_method" value="DELETE">
                                             <button type="submit" class="btn btn-danger btn-sm mr-1" onclick="return confirm('Apakah yakin anda ingin menghapusnya?');">
@@ -92,6 +93,102 @@
         <!-- /.card-body -->
     </div>
     <!-- /.card -->
+    <!-- Modal -->
+    <div class="modal fade" id="create-data" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Tambah data siswa</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="/siswa/savedata" method="POST" class="md-10" enctype="multipart/form-data">
+                        <?= csrf_field(); ?>
+                        <div class="form-group">
+                            <label for="nama">Nama</label>
+                            <input type="text" class="form-control <?= ($valid->hasError('nama')) ? 'is-invalid' : ''; ?>" id="nama" placeholder="Nama" name="nama" autofocus autocomplete="off" value="<?= old('nama'); ?>">
+                            <div id="validationServer03Feedback" class="invalid-feedback">
+                                <?= $valid->getError('nama'); ?>
+                            </div>
+                        </div>
+                        <div class="form-row form-group">
+                            <div class="col">
+                                <label for="nisn">NISN</label>
+                                <input type="text" class="form-control <?= ($valid->hasError('nisn')) ? 'is-invalid' : ''; ?>" placeholder="NISN" name="nisn" value="<?= old('nisn'); ?>">
+                                <div id="validationServer03Feedback" class="invalid-feedback">
+                                    <?= $valid->getError('nisn'); ?>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <label for="nis">NIS</label>
+                                <input type="text" class="form-control <?= ($valid->hasError('nis')) ? 'is-invalid' : ''; ?>" placeholder="NIS" name="nis" value="<?= old('nis'); ?>">
+                                <div id="validationServer03Feedback" class="invalid-feedback">
+                                    <?= $valid->getError('nis'); ?>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row form-group">
+                            <div class="col">
+                                <label for="tempatlahir">Tempat lahir</label>
+                                <input type="text" class="form-control" placeholder="Tempat lahir" name="tem_lahir" value="<?= old('tem_lahir'); ?>">
+                            </div>
+                            <div class="col">
+                                <label for="tanggallahir">Tanggal lahir</label>
+                                <div class="input-group flex-nowrap">
+                                    <input type="date" class="form-control" placeholder="Tanggal lahir" id="tanggallahir" name="tan_lahir" autocomplete="off" value="<?= old('tan_lahir'); ?>">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row form-group">
+                            <div class="col">
+                                <label for="kelas">Kelas</label>
+                                <select id="kelas" class="form-control" name="kelas">
+                                    <option value="X">X</option>
+                                    <option value="XI">XI</option>
+                                    <option value="XII">XII</option>
+                                </select>
+                            </div>
+                            <div class="col">
+                                <label for="jurusan">Jurusan</label>
+                                <select id="jurusan" class="form-control" name="jurusan">
+                                    <option value="IPA">IPA</option>
+                                    <option value="IPS">IPS</option>
+                                    <option value="BAHASA">BAHASA</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="jeniskelamin">Jenis Kelamin</label>
+                            <select id="jeniskelamin" class="form-control" name="j_kelamin">
+                                <option value="Laki - laki">Laki - laki</option>
+                                <option value="Perempuan">Perempuan</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="alamat">Alamat</label>
+                            <textarea class="form-control" id="alamat" rows="3" name="alamat"><?= old('alamat'); ?></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="pic">Tambah foto siswa</label>
+                            <input type="file" class="form-control-file <?= ($valid->hasError('pic')) ? 'is-invalid' : ''; ?>" id="pic" name="pic" onchange="previewFoto()">
+                            <div id="validationServer03Feedback" class="invalid-feedback">
+                                <?= $valid->getError('pic'); ?>
+                            </div>
+                        </div>
+                        <div class="form-group col d-inline-block ">
+                            <img src="/img/default.png" class="img-thumbnail img-preview">
+                        </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-success" name="submit">Submit</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </section>
 <!-- /.content -->
 

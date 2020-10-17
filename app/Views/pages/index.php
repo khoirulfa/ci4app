@@ -107,7 +107,7 @@
                </div>
                <div class="card-body">
                   <div class="chart">
-                     <canvas id="10-years-student-gender" style="max-width: 100%; display: block; width: 401px;" height="370" class="chartjs-render-monitor"></canvas>
+                     <canvas id="10-years-student-gender" style="max-width: 100%; display: block; width: 401px;" height="250" class="chartjs-render-monitor"></canvas>
                   </div>
                </div>
                <!-- /.card-body -->

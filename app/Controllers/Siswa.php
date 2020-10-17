@@ -18,31 +18,22 @@ class Siswa extends BaseController
          'title' => "Data siswa | CodeIgniter4",
          'header' => "Tabel data siswa",
          'breadcrumb' => "Tabel data / Data siswa",
+         'valid' => \Config\Services::validation(),
          'siswa' => $this->siswaModel->getSiswa()
       ];
 
       return view('siswa/index', $data);
    }
 
-   public function detail($nisn)
+   public function detail($id)
    {
       $data = [
          'title' => 'Detail siswa',
-         'siswa' => $this->siswaModel->getSiswa($nisn)
-      ];
-
-      return view('siswa/detail', $data);
-   }
-
-   public function create()
-   {
-      $data = [
-         'title' => 'Form tambah data siswa',
-         'header' => 'Tambah data siswa',
+         'siswa' => $this->siswaModel->getSiswa($id),
          'valid' => \Config\Services::validation()
       ];
 
-      return view('siswa/create', $data);
+      return view('siswa/detail', $data);
    }
 
    public function savedata()
@@ -114,10 +105,10 @@ class Siswa extends BaseController
       return redirect()->to('/siswa');
    }
 
-   public function delete($nisn)
+   public function delete($id)
    {
-      // cari gambar berdasar nisn
-      $siswa = $this->siswaModel->find($nisn);
+      // cari gambar berdasar id
+      $siswa = $this->siswaModel->find($id);
 
       // cegah hapus default.png
       if ($siswa['pic'] != 'default.png') {
@@ -125,51 +116,15 @@ class Siswa extends BaseController
          unlink('img/' . $siswa['pic']);
       }
 
-      $this->siswaModel->delete($nisn);
+      $this->siswaModel->delete($id);
 
       session()->setFlashdata('pesan', 'Data berhasil dihapus!');
       return redirect()->to('/siswa');
    }
 
-   public function ubah($nisn)
+   public function update($id)
    {
-      $data = [
-         'title' => 'Form ubah data siswa',
-         'header' => 'Ubah data siswa',
-         'valid' => \Config\Services::validation(),
-         'dataSiswa' => $this->siswaModel->getSiswa($nisn)
-      ];
-
-      return view('siswa/ubah', $data);
-   }
-
-   public function update($nisn)
-   {
-      // cek nisn
-      $nisnLama = $this->siswaModel->getSiswa($this->request->getVar('nisn'));
-      if ($nisnLama['nisn'] == $this->request->getVar('nisn')) {
-         $rule_nisn = 'required';
-         $rule_nis = 'required';
-      } else {
-         $rule_nisn = 'required|is_unique[siswa.nisn]';
-         $rule_nis = 'required|is_unique[siswa.nis]';
-      }
-
       if (!$this->validate([
-         'nisn' => [
-            'rules' => $rule_nisn,
-            'errors' => [
-               'required' => '{field} siswa harus diisi!',
-               'is_unique' => '{field} siswa tidak boleh sama!'
-            ]
-         ],
-         'nis' => [
-            'rules' => $rule_nis,
-            'errors' => [
-               'required' => '{field} siswa harus diisi!',
-               'is_unique' => '{field} siswa tidak boleh sama!'
-            ]
-         ],
          'nama' => [
             'rules' => 'required',
             'errors' => [
@@ -189,10 +144,10 @@ class Siswa extends BaseController
          $data = [
             'title' => 'Detail siswa | CodeIgniter 4',
             'header' => 'Detail siswa',
-            'siswa' => $this->siswaModel->getSiswa($this->request->getVar('nisn')),
+            'siswa' => $this->siswaModel->getSiswa($this->request->getVar('id')),
          ];
 
-         return view('/siswa/create', $data);
+         return view('/siswa/detail', $data);
       }
 
       $fileFoto = $this->request->getFile('pic');
@@ -209,6 +164,7 @@ class Siswa extends BaseController
       }
 
       $data = array(
+         'id' => $this->request->getVar('id'),
          'nama' => $this->request->getVar('nama'),
          'nisn' => $this->request->getVar('nisn'),
          'nis' => $this->request->getVar('nis'),
@@ -221,8 +177,8 @@ class Siswa extends BaseController
          'pic' => $namaFoto
       );
 
-      $this->siswaModel->save($data);
-      $this->siswaModel->update($nisn, $data);
+      // $this->siswaModel->save($data);
+      $this->siswaModel->update($id, $data);
 
       session()->setFlashdata('pesan', 'Data berhasil diubah!');
 
