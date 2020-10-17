@@ -29,6 +29,7 @@ class Guru extends BaseController
 	{
 		$data = [
 			'title' => 'Detail guru',
+			'valid' => \Config\Services::validation(),
 			'guru' => $this->GuruModel->getGuru($id)
 		];
 
@@ -136,10 +137,10 @@ class Guru extends BaseController
 			$data = [
 				'title' => 'Detail guru | CodeIgniter 4',
 				'header' => 'Detail guru',
-				'siswa' => $this->GuruModel->getGuru($this->request->getVar('id')),
+				'guru' => $this->GuruModel->getGuru($this->request->getVar('id')),
 			];
 
-			return view('/siswa/create', $data);
+			return view('/guru/create', $data);
 		}
 
 		$fileFoto = $this->request->getFile('pic');

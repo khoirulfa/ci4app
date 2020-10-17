@@ -64,14 +64,6 @@
             <!-- ./tables -->
             <li class="nav-header">EXAMPLES</li>
             <li class="nav-item">
-               <a href="../calendar.html" class="nav-link">
-                  <i class="nav-icon far fa-calendar-alt"></i>
-                  <p>
-                     Kalender
-                  </p>
-               </a>
-            </li>
-            <li class="nav-item">
                <a href="/about" class="nav-link">
                   <i class="nav-icon far fa-id-card"></i>
                   <p>

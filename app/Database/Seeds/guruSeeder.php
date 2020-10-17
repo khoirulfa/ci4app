@@ -14,17 +14,18 @@ class GuruSeeder extends \CodeIgniter\Database\Seeder
          $data = [
             'nama'      => $faker->name('male'),
             'tem_lahir' => $faker->city,
-            'j_kelamin' => 'perempuan',
+            'j_kelamin' => 'laki - laki',
             'tan_lahir' => $faker->date(),
             'tmt'       => $faker->date(),
             'domisili'  => $faker->state,
             'jabatan'   => 'guru',
             'pendidikan' => 'perguruan_tinggi',
-            'alamat'    => $faker->address
+            'alamat'    => $faker->address,
+            'pic'    => 'default.png'
          ];
          // Simple Queries
          $this->db->query(
-            "INSERT INTO guru (nama, tem_lahir, tan_lahir, tmt, domisili, jabatan, j_kelamin, pendidikan, alamat) VALUES(:nama:, :tem_lahir:, :tan_lahir:, :tmt:, :domisili:,:jabatan:, :j_kelamin:, :pendidikan:, :alamat:)",
+            "INSERT INTO guru (nama, tem_lahir, tan_lahir, tmt, domisili, jabatan, j_kelamin, pendidikan, alamat,pic) VALUES(:nama:, :tem_lahir:, :tan_lahir:, :tmt:, :domisili:,:jabatan:, :j_kelamin:, :pendidikan:, :alamat:,:pic:)",
             $data
          );
       }

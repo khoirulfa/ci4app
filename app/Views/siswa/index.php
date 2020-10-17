@@ -73,8 +73,8 @@
                                         <?= $sis['j_kelamin'] == "Laki - laki" ? 'L' : 'P' ?>
                                     </td>
                                     <td scope="col" style="text-align: center;">
-                                        <a href="/siswa/<?= $sis['nisn']; ?>" class="btn btn-success btn-sm">Detail</a>
-                                        <form action="/siswa/<?= $sis['nisn']; ?>" method="POST" class="d-inline">
+                                        <a href="/siswa/<?= $sis['id']; ?>" class="btn btn-success btn-sm">Detail</a>
+                                        <form action="/siswa/<?= $sis['id']; ?>" method="POST" class="d-inline">
                                             <?= csrf_field(); ?>
                                             <input type="hidden" name="_method" value="DELETE">
                                             <button type="submit" class="btn btn-danger btn-sm mr-1" onclick="return confirm('Apakah yakin anda ingin menghapusnya?');">
