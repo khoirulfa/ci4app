@@ -170,6 +170,7 @@
    </div>
 </section>
 <!-- /.content -->
+<script src="/assets/js/chart.js"></script>
 
 
 <?= $this->endsection(); ?>

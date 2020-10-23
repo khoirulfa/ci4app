@@ -71,4 +71,3 @@
    </div>
    <!-- /.sidebar -->
 </aside>
-<script src="/assets/js/chart.js"></script>
