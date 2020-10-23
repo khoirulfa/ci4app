@@ -14,6 +14,7 @@ class Siswa extends BaseController
 
    public function index()
    {
+      // search
       $keyword = $this->request->getVar('keyword');
       if ($keyword) {
          $siswa = $this->siswaModel->search($keyword);
@@ -21,12 +22,18 @@ class Siswa extends BaseController
          $siswa = $this->siswaModel;
       }
 
+      // paginate
+      $currentPage = $this->request->getVar('page_siswa') ? $this->request->getVar('page_siswa') : 1;
+
+      // index
       $data = [
          'title' => "Data siswa | CodeIgniter4",
          'header' => "Tabel data siswa",
          'breadcrumb' => "Tabel data / Data siswa",
          'valid' => \Config\Services::validation(),
-         'siswa' => $this->siswaModel->getSiswa()
+         'siswa' => $this->siswaModel->paginate(6, 'siswa'),
+         'pager' => $this->siswaModel->pager,
+         'currentPage' => $currentPage
       ];
 
       return view('siswa/index', $data);

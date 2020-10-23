@@ -14,6 +14,7 @@ class Guru extends BaseController
 
 	public function index()
 	{
+		// search
 		$keyword = $this->request->getVar('keyword');
 		if($keyword){
 			$guru = $this->GuruModel->search($keyword);
@@ -21,12 +22,18 @@ class Guru extends BaseController
 			$guru = $this->GuruModel;
 		}
 
+		// pagination
+		$currentPage = $this->request->getVar('page_guru') ? $this->request->getVar('page_guru') : 1;
+
+		// index
 		$data = [
 			'title' => "Data guru | CodeIgniter4",
 			'header' => "Tabel data guru",
 			'breadcrumb' => "Tabel data / Data guru",
 			'valid' => \Config\Services::validation(),
-			'teachers' => $this->GuruModel->getGuru()
+			'teachers' => $this->GuruModel->paginate(6, 'guru'),
+			'pager' => $this->GuruModel->pager,
+			'currentPage' => $currentPage
 		];
 
 		return view('guru/index', $data);
