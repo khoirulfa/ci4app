@@ -10,7 +10,7 @@ class GuruSeeder extends \CodeIgniter\Database\Seeder
    public function run()
    {
       $faker = \Faker\Factory::create('id_ID');
-      for ($i = 0; $i <= 5; $i++) {
+      for ($i = 0; $i <= 10; $i++) {
          $data = [
             'nama'      => $faker->name('male'),
             'tem_lahir' => $faker->city,

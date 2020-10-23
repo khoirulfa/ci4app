@@ -14,6 +14,13 @@ class Guru extends BaseController
 
 	public function index()
 	{
+		$keyword = $this->request->getVar('keyword');
+		if($keyword){
+			$guru = $this->GuruModel->search($keyword);
+		}else{
+			$guru = $this->GuruModel;
+		}
+
 		$data = [
 			'title' => "Data guru | CodeIgniter4",
 			'header' => "Tabel data guru",
