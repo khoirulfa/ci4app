@@ -71,10 +71,6 @@
         </div>
       </div>
 
-
-
-
-
       <div class="col-sm-12">
         <div class="row card-body mt-3 p-0">
           <table class="table">

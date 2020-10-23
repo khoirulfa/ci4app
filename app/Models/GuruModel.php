@@ -23,7 +23,7 @@ class GuruModel extends Model
     public function search($keyword)
     {
         $builder = $this->table('guru');
-        $builder->like('nama', $keyword)->orLike('tem_lahir')->orLike('jabatan')->orLike('alamat')->orLike('pendidikan');
+        $builder->like('nama', $keyword)->orLike('tem_lahir', $keyword)->orLike('jabatan', $keyword)->orLike('alamat', $keyword)->orLike('pendidikan', $keyword);
 
         return $builder;
     }

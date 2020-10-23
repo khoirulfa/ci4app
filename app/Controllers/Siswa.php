@@ -14,6 +14,13 @@ class Siswa extends BaseController
 
    public function index()
    {
+      $keyword = $this->request->getVar('keyword');
+      if ($keyword) {
+         $siswa = $this->siswaModel->search($keyword);
+      } else {
+         $siswa = $this->siswaModel;
+      }
+
       $data = [
          'title' => "Data siswa | CodeIgniter4",
          'header' => "Tabel data siswa",

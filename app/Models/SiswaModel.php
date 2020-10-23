@@ -20,4 +20,12 @@ class SiswaModel extends Model
         }
         return $this->where(['id' => $id])->first();
     }
+
+    public function search($keyword)
+    {
+        $builder = $this->table('siswa');
+        $builder->like('nama', $keyword)->orLike('tem_lahir',$keyword)->orLike('kelas', $keyword)->orLike('jurusan', $keyword)->orLike('alamat', $keyword);
+
+        return $builder;
+    }
 }
