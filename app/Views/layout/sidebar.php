@@ -24,7 +24,7 @@
             <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
             <li class="nav-item">
-               <a href="/home" class="nav-link">
+               <a href="/" class="nav-link">
                   <i class="nav-icon fas fa-tachometer-alt"></i>
                   <p>
                      Dashboard
@@ -56,7 +56,7 @@
                </ul>
             </li>
             <!-- ./tables -->
-            <li class="nav-header">EXAMPLES</li>
+            <li class="nav-header">Other</li>
             <li class="nav-item">
                <a href="/about" class="nav-link">
                   <i class="nav-icon far fa-id-card"></i>
@@ -71,3 +71,4 @@
    </div>
    <!-- /.sidebar -->
 </aside>
+<script src="/assets/js/chart.js"></script>
