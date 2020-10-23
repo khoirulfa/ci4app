@@ -89,7 +89,7 @@
               <th scope="col">Aksi</th>
             </thead>
             <tbody>
-              <?php $num = 1; ?>
+              <?php $num = 1 + (6 * ($currentPage - 1)); ?>
               <?php foreach ($teachers as $teacher) : ?>
                 <tr>
                   <th scope="col" style="text-align: center;"><?= $num; ?></th>
@@ -142,6 +142,17 @@
               <?php endforeach; ?>
             </tbody>
           </table>
+
+          <!-- pagination -->
+          <div class="container-fluid mt-2">
+            <div class="row">
+              <div class="col">
+                <?= $pager->links('guru', 'guruPagination'); ?>
+              </div>
+            </div>
+          </div>          
+          <!-- !pagination end -->
+
         </div>
       </div>
     </div>
