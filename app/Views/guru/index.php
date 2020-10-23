@@ -43,10 +43,39 @@
       <?php endif; ?>
     </div>
     <div class="col-xs-10 offset-xs-1 mt-1">
-      <button type="button" class="btn btn-primary btn-sm mt-1 ml-2" data-toggle="modal" data-target="#create-data">
-        <i class="fa fa-plus mr-2"></i>
-        <p class="d-inline">Tambah data</p>
-      </button>
+      <div class="container-fluid mt-2">
+        <div class="row">
+          <!-- button tambah data -->
+          <div class="col-6">
+            <button type="button" class="btn btn-primary btn-sm mr-1" data-toggle="modal" data-target="#create-data">
+              <i class="fa fa-plus mr-2"></i>
+              <p class="d-inline">Tambah data</p>
+            </button>
+            <!-- refresh table -->
+            <button type="button" class="btn btn-success btn-sm">
+              <i class="fa fa-sync mr-2"></i>
+              <a href="/guru" class="d-inline" style="color: #fff; text-decoration: none;">Refresh table</a>
+            </button>
+          </div>
+          <!-- !end button tambah data -->
+
+          <!-- search bar  -->
+          <div class="col-6">
+            <form class="form-inline ml-3 float-right" method="POST">
+              <div class="input-group input-group-sm">
+                <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search" name="keyword">
+                <div class="input-group-append">
+                  <button class="btn btn-navbar" type="submit" name="submit">
+                    <i class="fas fa-search"></i>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <!-- !end searchbar -->
+        </div>
+      </div>
+
       <div class="col-sm-12">
         <div class="row card-body mt-3 p-0">
           <table class="table">

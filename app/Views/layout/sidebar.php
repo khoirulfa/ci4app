@@ -42,15 +42,15 @@
                </a>
                <ul class="nav nav-treeview">
                   <li class="nav-item">
-                     <a href="/siswa" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>Data Siswa</p>
-                     </a>
-                  </li>
-                  <li class="nav-item">
                      <a href="/guru" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
                         <p>Data Guru</p>
+                     </a>
+                  </li>
+                  <li class="nav-item">
+                     <a href="/siswa" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Data Siswa</p>
                      </a>
                   </li>
                </ul>

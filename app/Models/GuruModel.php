@@ -19,4 +19,12 @@ class GuruModel extends Model
         }
         return $this->where(['id' => $id])->first();
     }
+
+    public function search($keyword)
+    {
+        $builder = $this->table('guru');
+        $builder->like('nama', $keyword)->orLike('tem_lahir', $keyword)->orLike('jabatan', $keyword)->orLike('alamat', $keyword)->orLike('pendidikan', $keyword);
+
+        return $builder;
+    }
 }
