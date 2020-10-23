@@ -47,9 +47,14 @@
         <div class="row">
           <!-- button tambah data -->
           <div class="col-6">
-            <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#create-data">
+            <button type="button" class="btn btn-primary btn-sm mr-1" data-toggle="modal" data-target="#create-data">
               <i class="fa fa-plus mr-2"></i>
               <p class="d-inline">Tambah data</p>
+            </button>
+            <!-- refresh table -->
+            <button type="button" class="btn btn-success btn-sm">
+              <i class="fa fa-sync mr-2"></i>
+              <a href="/guru" class="d-inline" style="color: #fff; text-decoration: none;">Refresh table</a>
             </button>
           </div>
           <!-- !end button tambah data -->
