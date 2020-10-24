@@ -3,6 +3,8 @@
 namespace App\Controllers;
 
 use App\Models\GuruModel;
+use App\Models\ModelGuru;
+use Config\Services;
 
 class Guru extends BaseController
 {
@@ -38,6 +40,45 @@ class Guru extends BaseController
 
 		return view('guru/index', $data);
 	}
+
+	public function listdata()
+    {
+        $request = Services::request();
+        $datamodel = new GuruModel($request);
+        if ($request->getMethod(true) == 'POST') {
+            $lists = $datamodel->get_datatables();
+            $data = [];
+            $no = $request->getPost("start");
+            foreach ($lists as $list) {
+                $no++;
+                $row = [];
+					 $row[] = $no;
+					 $row[] = $list->nama;
+					 $row[] = $list->jabatan;
+					 $row[] = $list->mapel;
+					 $row[] = $list->pendidikan;
+					 $row[] = $list->j_kelamin;
+					 $row[] = "<a href=\"/guru/detail/<?= $list->id; ?>\" class=\"btn btn-success btn-sm\">Detail</a>
+                    <form action=\"/guru/<?= $list->id; ?>\" method=\"POST\" class=\"d-inline\">
+                      <?= csrf_field(); ?>
+                      <input type=\"hidden\" name=\"_method\" value=\"DELETE\">
+                      <button type=\"submit\" class=\"btn btn-danger btn-sm mr-1\" onclick=\"return confirm('Apakah yakin anda ingin menghapusnya?');\">
+                        <i class=\"fa fa-trash-alt\"></i>
+                      </button>
+                    </form>";
+				
+					 
+                $data[] = $row;
+            }
+            $output = [
+                "draw" => $request->getPost('draw'),
+                "recordsTotal" => $datamodel->count_all(),
+                "recordsFiltered" => $datamodel->count_filtered(),
+                "data" => $data
+            ];
+            echo json_encode($output);
+        }
+    }
 
 	public function detail($id)
 	{

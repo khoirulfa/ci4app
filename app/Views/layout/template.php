@@ -17,11 +17,13 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <!-- jquery-ui -->
     <link rel="stylesheet" href="/assets/plugins/jquery-ui/jquery-ui.min.css">
-    <!-- Google Font: Nunito -->
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <!-- datatable -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css">
+    <!-- Google Font: Roboto -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <style>
         * {
-            font-family: Nunito;
+            font-family: 'Roboto', sans-serif;
         }
     </style>
 </head>
@@ -43,9 +45,15 @@
         echo  $this->include('layout/sidebar');
         ?>
 
+        
         <!-- ChartJS -->
         <script src="/assets/plugins/chart.js/Chart.min.js"></script>
-        
+        <!-- jQuery -->
+        <script src="/assets/plugins/jquery/jquery.min.js"></script>
+        <!-- datatable -->
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
+
+
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <?php
@@ -68,15 +76,13 @@
 
 
 
-    <!-- jQuery -->
-    <script src="/assets/plugins/jquery/jquery.min.js"></script>
+
     <!-- jQuery ui -->
     <script src="/assets/plugins/jquery-ui/jquery-ui.min.js"></script>
     <!-- Bootstrap 4 -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <!-- AdminLTE App -->
     <script src="/assets/js/adminlte.min.js"></script>
-
     <!-- popper -->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <!-- my script -->
