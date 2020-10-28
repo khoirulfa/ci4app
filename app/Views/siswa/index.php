@@ -65,7 +65,7 @@
                     <div class="col-6">
                         <form class="form-inline ml-3 float-right" method="POST">
                             <div class="input-group input-group-sm">
-                                <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search" name="keyword">
+                                <input class="form-control form-control-navbar" size="30" type="search" placeholder="Search" aria-label="Search" name="keyword">
                                 <div class="input-group-append">
                                     <button class="btn btn-navbar" type="submit" name="submit">
                                         <i class="fas fa-search"></i>
