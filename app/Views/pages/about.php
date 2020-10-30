@@ -1,14 +1,28 @@
 <?= $this->extend('layout/template'); ?>
 <?= $this->section('content'); ?>
 
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6">
+                <h1>
+                    <?= $header; ?>
+                </h1>
+            </div>
+        </div>
+    </div>
+    <!-- /.container-fluid -->
+</section>
 
 <div class="card">
     <div class="card-body">
         <div class="card-title mb-4">
             <div class="d-flex justify-content-start">
+                <!-- profile pic -->
                 <div class="image-container">
-                    <img src="/public/assets/img/profile.jpg" id="imgProfile" style="width: 150px; height: 150px" class="img-thumbnail" />
+                    <img src="/assets/img/profile.jpg" id="imgProfile" style="width: 150px; height: 150px" class="img-thumbnail" />
                 </div>
+                <!-- user data -->
                 <div class="userData ml-3 mr-4">
                     <h2 class="d-block mb-3" style="font-size: 1.5rem; font-weight: bold">Khoirul</h2>
                     <h6 class="d-block">Student at MA Islamiyah Senori</h6>
@@ -102,7 +116,13 @@
 
                     </div>
                     <div class="tab-pane fade" id="connectedServices" role="tabpanel" aria-labelledby="ConnectedServices-tab">
-                        Facebook, Google, Twitter Account that are connected to this account
+                        <ul class="list-group mt-1 mb-4">
+                            <li class="list-group-item">Cras justo odio</li>
+                            <li class="list-group-item">Dapibus ac facilisis in</li>
+                            <li class="list-group-item">Morbi leo risus</li>
+                            <li class="list-group-item">Porta ac consectetur ac</li>
+                            <li class="list-group-item">Vestibulum at eros</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -112,6 +132,6 @@
     </div>
 
 </div>
-    
+
 
 <?= $this->endSection(); ?>

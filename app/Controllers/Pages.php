@@ -18,6 +18,7 @@ class Pages extends BaseController
     {
         $data = [
             'title' => "About Me | CodeIgniter4",
+            'header' => "About Me",
             'nama' => "A. Musafir Khoirul Fattah",
             'wa' => "http://wa.me/62895365016420",
             'phone' => "+62 895365016420",
