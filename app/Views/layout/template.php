@@ -29,6 +29,8 @@
 <body class="hold-transition sidebar-mini sidebar-collapse">
     <div class="wrapper">
 
+        <!-- popper -->
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
         <?php
         ###########################
         # ini untuk mengubah navbar    
@@ -43,7 +45,7 @@
         echo  $this->include('layout/sidebar');
         ?>
 
-        
+
         <!-- ChartJS -->
         <script src="/assets/plugins/chart.js/Chart.min.js"></script>
         <!-- jQuery -->
@@ -79,8 +81,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <!-- AdminLTE App -->
     <script src="/assets/js/adminlte.min.js"></script>
-    <!-- popper -->
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <!-- my script -->
     <script src="/assets/js/script.js"></script>
 </body>

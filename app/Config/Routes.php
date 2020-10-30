@@ -38,6 +38,7 @@ $routes->setAutoRoute(true);
 
 // pages
 $routes->get('/', 'Pages::index');
+$routes->get('/about', 'Pages::about');
 
 // siswa
 $routes->get('/siswa', 'Siswa::index');
