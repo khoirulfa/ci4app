@@ -7,7 +7,7 @@
         <div class="card-title mb-4">
             <div class="d-flex justify-content-start">
                 <div class="image-container">
-                    <img src="http://placehold.it/150x150" id="imgProfile" style="width: 150px; height: 150px" class="img-thumbnail" />
+                    <img src="/public/assets/img/profile.jpg" id="imgProfile" style="width: 150px; height: 150px" class="img-thumbnail" />
                 </div>
                 <div class="userData ml-3 mr-4">
                     <h2 class="d-block mb-3" style="font-size: 1.5rem; font-weight: bold">Khoirul</h2>
@@ -29,8 +29,6 @@
                 </ul>
                 <div class="tab-content ml-1" id="myTabContent">
                     <div class="tab-pane fade show active" id="basicInfo" role="tabpanel" aria-labelledby="basicInfo-tab">
-
-
                         <div class="row">
                             <div class="col-sm-3 col-md-3 col-5">
                                 <label style="font-weight:bold;">Full Name</label>
