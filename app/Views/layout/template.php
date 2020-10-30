@@ -17,8 +17,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <!-- jquery-ui -->
     <link rel="stylesheet" href="/assets/plugins/jquery-ui/jquery-ui.min.css">
-    <!-- datatable -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css">
     <!-- Google Font: Roboto -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <style>
@@ -50,8 +48,6 @@
         <script src="/assets/plugins/chart.js/Chart.min.js"></script>
         <!-- jQuery -->
         <script src="/assets/plugins/jquery/jquery.min.js"></script>
-        <!-- datatable -->
-        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
 
 
         <!-- Content Wrapper. Contains page content -->
