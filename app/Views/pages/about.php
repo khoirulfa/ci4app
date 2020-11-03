@@ -117,11 +117,36 @@
                     </div>
                     <div class="tab-pane fade" id="connectedServices" role="tabpanel" aria-labelledby="ConnectedServices-tab">
                         <ul class="list-group mt-1 mb-4">
-                            <li class="list-group-item">Cras justo odio</li>
-                            <li class="list-group-item">Dapibus ac facilisis in</li>
-                            <li class="list-group-item">Morbi leo risus</li>
-                            <li class="list-group-item">Porta ac consectetur ac</li>
-                            <li class="list-group-item">Vestibulum at eros</li>
+                            <li class="list-group-item align-middle">
+                                See my profile on <br>
+                                <a href="<?= $facebook; ?>" target="blank">
+                                    <i class="fab fa-facebook fa-lg"></i> Facebook
+                                </a>
+                            </li>
+                            <li class="list-group-item align-middle">
+                                Contact me at <br>
+                                <a href="<?= $whatsapp; ?>" target="blank">
+                                    <i class="fab fa-whatsapp fa-lg"></i> WhatsApp
+                                </a>
+                            </li>
+                            <li class="list-group-item align-middle">
+                                See my project and repository on <br>
+                                <a href="<?= $github; ?>" target="blank">
+                                    <i class="fab fa-github fa-lg"></i> Github
+                                </a>
+                            </li>
+                            <li class="list-group-item align-middle">
+                                Follow me on <br>
+                                <a href="<?= $instagram; ?>" target="blank">
+                                    <i class="fab fa-instagram fa-lg"></i> Instagram
+                                </a>
+                            </li>
+                            <li class="list-group-item align-middle">
+                                Call me <br>
+                                <a href="<?= $phone; ?>" target="blank">
+                                    <i class="fas fa-phone fa-lg"></i> Phone
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>
