@@ -58,7 +58,7 @@
             <!-- ./tables -->
             <li class="nav-header">Other</li>
             <li class="nav-item">
-               <a href="/about" class="nav-link">
+               <a href="/pages/about" class="nav-link">
                   <i class="nav-icon far fa-id-card"></i>
                   <p>
                      About Me

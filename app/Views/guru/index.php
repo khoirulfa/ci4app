@@ -150,7 +150,7 @@
                 <?= $pager->links('guru', 'guruPagination'); ?>
               </div>
             </div>
-          </div>          
+          </div>
           <!-- !pagination end -->
 
         </div>
