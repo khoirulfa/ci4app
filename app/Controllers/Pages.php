@@ -20,11 +20,11 @@ class Pages extends BaseController
             'title' => "About Me | CodeIgniter4",
             'header' => "About Me",
             'nama' => "A. Musafir Khoirul Fattah",
-            'wa' => "http://wa.me/62895365016420",
+            'whatsapp' => "http://wa.me/62895365016420",
             'phone' => "+62 895365016420",
-            'instagram' => "https://www.instagram.com/m.khoirul/?hl=id",
-            'fb' => "https://www.facebook.com/sndv.20",
-            'github' => "https://www.facebook.com/sndv.20",
+            'instagram' => "https://www.instagram.com/musafir.khoirul/?hl=id",
+            'facebook' => "https://www.facebook.com/sndv.20",
+            'github' => "https://github.com/khoirulfa",
         ];
         return view('pages/about', $data);
     }
