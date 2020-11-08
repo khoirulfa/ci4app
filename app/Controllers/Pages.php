@@ -21,7 +21,7 @@ class Pages extends BaseController
             'header' => "About Me",
             'nama' => "A. Musafir Khoirul Fattah",
             'whatsapp' => "http://wa.me/62895365016420",
-            'phone' => "+62 895365016420",
+            'phone' => "+62 895 3650 16420",
             'instagram' => "https://www.instagram.com/musafir.khoirul/?hl=id",
             'facebook' => "https://www.facebook.com/sndv.20",
             'github' => "https://github.com/khoirulfa",

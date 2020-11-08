@@ -120,32 +120,30 @@
                             <li class="list-group-item align-middle">
                                 See my profile on <br>
                                 <a href="<?= $facebook; ?>" target="blank">
-                                    <i class="fab fa-facebook fa-lg"></i> Facebook
+                                    <i class="fab fa-fw fa-facebook fa-lg"></i> Facebook
                                 </a>
                             </li>
                             <li class="list-group-item align-middle">
                                 Contact me at <br>
                                 <a href="<?= $whatsapp; ?>" target="blank">
-                                    <i class="fab fa-whatsapp fa-lg"></i> WhatsApp
+                                    <i class="fab fa-fw fa-whatsapp fa-lg"></i> WhatsApp
                                 </a>
                             </li>
                             <li class="list-group-item align-middle">
                                 See my project and repository on <br>
                                 <a href="<?= $github; ?>" target="blank">
-                                    <i class="fab fa-github fa-lg"></i> Github
+                                    <i class="fab fa-fw fa-github fa-lg"></i> Github
                                 </a>
                             </li>
                             <li class="list-group-item align-middle">
                                 Follow me on <br>
                                 <a href="<?= $instagram; ?>" target="blank">
-                                    <i class="fab fa-instagram fa-lg"></i> Instagram
+                                    <i class="fab fa-fw fa-instagram fa-lg"></i> Instagram
                                 </a>
                             </li>
                             <li class="list-group-item align-middle">
                                 Call me <br>
-                                <a href="<?= $phone; ?>" target="blank">
-                                    <i class="fas fa-phone fa-lg"></i> Phone
-                                </a>
+                                <i class="fas fa-fw fa-phone"></i> <?= $phone; ?>
                             </li>
                         </ul>
                     </div>
